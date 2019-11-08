@@ -81,5 +81,128 @@
         TextBox3.Text = liste
 
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+        Dim var As String
+        Dim pre As String
+        Dim liste As String
+        Dim Feld As String
+        Dim Form As String = "Formblatt_OP"
+
+
+        pre = "c"
+        liste = ""
+        For i = 1 To 7
+            liste = liste & vbCrLf & "HorizontalLayout " & pre & i & "_lay = new HorizontalLayout();" & vbCrLf
+
+            Feld = pre & i & "LW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            Feld = pre & i & "RW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            liste = liste & pre & i & "_lay.add();" & vbCrLf & vbCrLf
+        Next
+
+        liste = liste & vbCrLf
+
+        pre = "T"
+        For i = 1 To 12
+            liste = liste & vbCrLf & "HorizontalLayout " & pre & i & "_lay = new HorizontalLayout();" & vbCrLf
+
+            Feld = pre & i & "LW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            Feld = pre & i & "RW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            Feld = pre & i & "LR_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            Feld = pre & i & "RR_fld"
+            var = "TextField " & pre & i & "RR" & "_fld = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf & vbCrLf
+
+            liste = liste & pre & i & "_lay.add();" & vbCrLf & vbCrLf
+
+        Next
+
+        liste = liste & vbCrLf
+
+        pre = "L"
+        For i = 1 To 5
+            liste = liste & vbCrLf & "HorizontalLayout " & pre & i & "_lay = new HorizontalLayout();" & vbCrLf
+
+            Feld = pre & i & "LW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf
+
+            liste = liste & pre & i & "_lay.add();" & vbCrLf & vbCrLf
+
+            Feld = pre & i & "RW_fld"
+            var = "TextField " & Feld & " = new TextField();" & vbCrLf
+            liste = liste & var
+            liste = liste & "binder.forField(" & Feld & ")" & vbCrLf _
+            & vbTab & vbTab & "//.withConverter(New StringToIntegerConverter( ""keine Zahl""))" & vbCrLf _
+            & vbTab & vbTab & "//.asRequired(""Pflichtfeld"")" & vbCrLf _
+            & vbTab & vbTab & ".bind(" & Form & "::get" & UppercaseFirstLetter(Feld) & ", " & Form & "::set" & UppercaseFirstLetter(Feld) & ");" & vbCrLf _
+            & "TextField " & Feld & "_err = new TextField();" & vbCrLf _
+            & Feld & "_err.setVisible(false);" & vbCrLf
+
+            liste = liste & pre & i & "_lay.add();" & vbCrLf & vbCrLf
+
+        Next
+
+        TextBox3.Text = liste
+
+    End Sub
 End Class
 
