@@ -39,5 +39,47 @@
         My.Computer.Clipboard.SetText(Ergebnis)
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim var As String
+        Dim pre As String
+        Dim liste As String
+
+        pre = "c"
+        liste = ""
+        For i = 1 To 7
+            var = "private String " & pre & i & "LW" & "_fld;" & vbCrLf
+            liste = liste & var
+            var = "private String " & pre & i & "RW" & "_fld;" & vbCrLf
+            liste = liste & var
+        Next
+
+        liste = liste & vbCrLf
+
+        pre = "T"
+        For i = 1 To 12
+            var = "private String " & pre & i & "LW" & "_fld;" & vbCrLf
+            liste = liste & var
+            var = "private String " & pre & i & "RW" & "_fld;" & vbCrLf
+            liste = liste & var
+            var = "private String " & pre & i & "LR" & "_fld;" & vbCrLf
+            liste = liste & var
+            var = "private String " & pre & i & "RR" & "_fld;" & vbCrLf
+            liste = liste & var
+        Next
+
+        liste = liste & vbCrLf
+
+        pre = "L"
+        For i = 1 To 5
+            var = "private String " & pre & i & "LW" & "_fld;" & vbCrLf
+            liste = liste & var
+            var = "private String " & pre & i & "RW" & "_fld;" & vbCrLf
+            liste = liste & var
+        Next
+
+        TextBox3.Text = liste
+
+    End Sub
 End Class
 
